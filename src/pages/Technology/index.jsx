@@ -1,7 +1,7 @@
 import React from "react";
 
-const Technology = () => {
-  return <div>Technology</div>;
+const Technology = ({ data }) => {
+  return <div>{JSON.stringify(data)}</div>;
 };
 
 export default Technology;

@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 import "./globals.scss";
 
 //* View
-import { Destination, Crew, Technology } from "./pages";
+import { Home, Destination, Crew, Technology } from "./pages";
 
 //* Components
 import { Navbar } from "./components";
 
 const App = () => {
   const [data, setData] = useState({});
-  const [route, setRoute] = useState("/");
+  const [route, setRoute] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -24,12 +24,17 @@ const App = () => {
     setData(data);
   };
 
+  const routeHandler = (value) => {
+    setRoute(value);
+  };
+
   return (
     <main className='app'>
-      {/* <Navbar /> */}
-      {/* <Destination data={state.destinations}/> */}
-      {/* <Crew data={state.crew}/> */}
-      {/* <Technology data={state.technology}/> */}
+      <Navbar handleRoute={routeHandler} route={route} />
+      {route === "" && <Home />}
+      {/* {route === "destination" && <Destination data={data.destinations} />}
+      {route === "crew" && <Crew data={data.crew} />}
+      {route === "technology" && <Technology data={data.technology} />} */}
     </main>
   );
 };
