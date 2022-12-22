@@ -1,8 +1,18 @@
+//* Dependancies
 import { useState, useEffect } from "react";
-import './App.scss';
+
+//* Styles
+import "./globals.scss";
+
+//* View
+import { Destination, Crew, Technology } from "./pages";
+
+//* Components
+import { Navbar } from "./components";
 
 const App = () => {
-  const [state, setState] = useState({});
+  const [data, setData] = useState({});
+  const [route, setRoute] = useState("/");
 
   useEffect(() => {
     fetchData();
@@ -11,12 +21,17 @@ const App = () => {
   const fetchData = async () => {
     const response = await fetch("data.json");
     const data = await response.json();
-    setState(data);
+    setData(data);
   };
 
-  return <main className="app">
-    Hello
-  </main>;
+  return (
+    <main className='app'>
+      {/* <Navbar /> */}
+      {/* <Destination data={state.destinations}/> */}
+      {/* <Crew data={state.crew}/> */}
+      {/* <Technology data={state.technology}/> */}
+    </main>
+  );
 };
 
 export default App;
