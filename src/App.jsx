@@ -1,5 +1,6 @@
 //* Dependancies
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import data from "./data.json";
 
 //* Styles
 import "./globals.scss";
@@ -11,18 +12,7 @@ import { Home, Destination, Crew, Technology } from "./pages";
 import { Navbar } from "./components";
 
 const App = () => {
-  const [data, setData] = useState({});
   const [route, setRoute] = useState("");
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch("data.json");
-    const data = await response.json();
-    setData(data);
-  };
 
   const routeHandler = (value) => {
     setRoute(value);
@@ -32,9 +22,9 @@ const App = () => {
     <main className='app'>
       <Navbar handleRoute={routeHandler} route={route} />
       {route === "" && <Home />}
-      {/* {route === "destination" && <Destination data={data.destinations} />}
-      {route === "crew" && <Crew data={data.crew} />}
-      {route === "technology" && <Technology data={data.technology} />} */}
+      {/* {route === "destination" && <Destination data={data.destinations} />} */}
+      {/* {route === "crew" && <Crew data={data.crew} />} */}
+      {/* {route === "technology" && <Technology data={data.technology} />} */}
     </main>
   );
 };
