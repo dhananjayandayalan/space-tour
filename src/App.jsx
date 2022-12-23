@@ -1,18 +1,18 @@
 //* Dependancies
-import { useState } from "react";
-import data from "./data.json";
+import { useState } from 'react';
+import data from './data.json';
 
 //* Styles
-import "./globals.scss";
+import './globals.scss';
 
 //* View
-import { Home, Destination, Crew, Technology } from "./pages";
+import { Home, Destination, Crew, Technology } from './pages';
 
 //* Components
-import { Navbar } from "./components";
+import { Navbar } from './components';
 
 const App = () => {
-  const [route, setRoute] = useState("");
+  const [route, setRoute] = useState('');
 
   const routeHandler = (value) => {
     setRoute(value);
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <main className='app'>
       <Navbar handleRoute={routeHandler} route={route} />
-      {route === "" && <Home />}
+      {/* {route === '' && <Home />} */}
       {/* {route === "destination" && <Destination data={data.destinations} />} */}
       {/* {route === "crew" && <Crew data={data.crew} />} */}
       {/* {route === "technology" && <Technology data={data.technology} />} */}

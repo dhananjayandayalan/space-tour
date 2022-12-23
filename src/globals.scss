@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
 
 /**************************/
 /* Variables */
@@ -6,7 +6,7 @@
 
 $color-base: hsl(230, 35%, 7%);
 $color-accent: hsl(231, 77%, 90%);
-$color-white: hsl(0, 0%, 0%);
+$color-white: hsl(0, 0%, 100%);
 $fs-h1: 15rem;
 $fs-h2: 10rem;
 $fs-h3: 5.6rem;
@@ -73,6 +73,42 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: "Barlow", serif;
+  max-width: 144rem;
+  font-family: 'Barlow', serif;
   background: $color-base;
+  background-image: url('./assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $color-white;
+}
+
+.app {
+  max-width: 90rem; 
+}
+
+/**************************/
+/* Global Media Queries */
+/**************************/
+
+// 500px (499.98px)
+@media (min-width: 31.2488em) {
+  body {
+    background-image: url('./assets/home/background-home-tablet.jpg');
+  }
+}
+
+// 992px (991.98px)
+@media (min-width: 61.9988em) {
+  body {
+    background-image: url('./assets/home/background-home-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// 1440px (1439.98px)
+@media (min-width: 89.9988em) {
+  body {
+    background-size: contain;
+  }
 }
