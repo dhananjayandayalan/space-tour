@@ -1,0 +1,16 @@
+@import '../../globals.scss';
+
+.navbar {
+  padding: 2.4rem;
+  margin-bottom: 4.8rem;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 47.99em) {
+  #hamburger-logo {
+    display: none;
+  }
+}

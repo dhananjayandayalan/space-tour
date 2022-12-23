@@ -73,17 +73,17 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  max-width: 144rem;
   font-family: 'Barlow', serif;
   background: $color-base;
+  color: $color-white;
   background-image: url('./assets/home/background-home-mobile.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  color: $color-white;
 }
 
 .app {
-  max-width: 90rem; 
+  max-width: 144rem;
+  margin: 0 auto;
 }
 
 /**************************/
