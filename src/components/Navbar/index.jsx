@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { DEVICE } from '../../constants';
 import { useWindowDimensions } from '../../hooks';
 
+import { DEVICE } from '../../constants';
 import classes from './Navbar.module.scss';
 
 const overlayDOM = document.getElementById('overlay');
@@ -10,14 +10,39 @@ const overlayDOM = document.getElementById('overlay');
 const Sidebar = ({ handleMenu, handleRoute }) => {
   const [close, setClose] = useState(false);
 
-  return <Fragment></Fragment>;
+  return <Fragment>
+    
+  </Fragment>;
 };
 
-const Navbar = ({ handleRoute }) => {
+const NavItems = (props) => {
+  const { handleRoute, route, navItems, width } = props;
+  return (
+    <nav className={classes['nav-items']}>
+      <ul>
+        {navItems.map((item, index) => {
+          return (
+            <li key={item + index} tabIndex={'0'}>
+              <button
+                className={route === item ? classes.active : ''}
+                onClick={() => handleRoute(item)}
+              >
+                {width >= DEVICE.DEVICE_DESKTOP && <span>{'0' + index}</span>}
+                {item}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+};
+
+const Navbar = (props) => {
   const [menu, setMenu] = useState(false);
   const { width } = useWindowDimensions();
 
-  const hamburgerMenuHandler = () => {
+  const notMobileHandler = () => {
     return width >= DEVICE.DEVICE_TABLET;
   };
 
@@ -26,10 +51,10 @@ const Navbar = ({ handleRoute }) => {
   };
 
   return (
-    <div className={classes.navbar}>
-      <img src='./assets/shared/logo.svg' alt='space tour logo' />
-      <div className={classes['nav-items']}>
-        {!hamburgerMenuHandler() && !menu && (
+    <Fragment>
+      <div className={classes.navbar}>
+        <img src='./assets/shared/logo.svg' alt='space tour logo' />
+        {!notMobileHandler() && !menu && (
           <img
             src='./assets/shared/icon-hamburger.svg'
             role='button'
@@ -38,10 +63,12 @@ const Navbar = ({ handleRoute }) => {
             id={classes['hamburger-logo']}
           />
         )}
-        {hamburgerMenuHandler() && <nav className={classes['nav-items']}></nav>}
-        {menu && <Sidebar handleMenu={menuHandler} handleRoute={handleRoute} />}
+        {notMobileHandler() && <NavItems {...props} width={width} />}
       </div>
-    </div>
+      {menu && (
+        <Sidebar handleMenu={menuHandler} handleRoute={props.handleRoute} />
+      )}
+    </Fragment>
   );
 };
 

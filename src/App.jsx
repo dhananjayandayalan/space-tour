@@ -12,7 +12,8 @@ import { Home, Destination, Crew, Technology } from './pages';
 import { Navbar } from './components';
 
 const App = () => {
-  const [route, setRoute] = useState('');
+  const [route, setRoute] = useState('home');
+  const dataNames = ['home', ...Object.keys(data)];
 
   const routeHandler = (value) => {
     setRoute(value);
@@ -20,9 +21,9 @@ const App = () => {
 
   return (
     <main className='app'>
-      <Navbar handleRoute={routeHandler} route={route} />
-      {/* {route === '' && <Home />} */}
-      {/* {route === "destination" && <Destination data={data.destinations} />} */}
+      <Navbar handleRoute={routeHandler} route={route} navItems={dataNames} />
+      {/* {route === 'home' && <Home />} */}
+      {/* {route === "destinations" && <Destination data={data.destinations} />} */}
       {/* {route === "crew" && <Crew data={data.crew} />} */}
       {/* {route === "technology" && <Technology data={data.technology} />} */}
     </main>

@@ -7,6 +7,8 @@
 $color-base: hsl(230, 35%, 7%);
 $color-accent: hsl(231, 77%, 90%);
 $color-white: hsl(0, 0%, 100%);
+$color-nav-bg: hsla(0, 0%, 100%, 0.04);
+$color-nav-hover-bg: hsla(0, 0%, 100%, 0.06);
 $fs-h1: 15rem;
 $fs-h2: 10rem;
 $fs-h3: 5.6rem;
@@ -82,7 +84,7 @@ body {
 }
 
 .app {
-  max-width: 144rem;
+  max-width: 142rem;
   margin: 0 auto;
 }
 
@@ -109,6 +111,7 @@ body {
 // 1440px (1439.98px)
 @media (min-width: 89.9988em) {
   body {
+    padding-top: 4rem;
     background-size: contain;
   }
 }
