@@ -1,5 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { DEVICE } from '../../constants';
+import { useWindowDimensions } from '../../hooks';
 
 import classes from './Navbar.module.scss';
 
@@ -13,6 +15,11 @@ const Sidebar = ({ handleMenu, handleRoute }) => {
 
 const Navbar = ({ handleRoute }) => {
   const [menu, setMenu] = useState(false);
+  const { width } = useWindowDimensions();
+
+  const hamburgerMenuHandler = () => {
+    return width >= DEVICE.DEVICE_TABLET;
+  };
 
   const menuHandler = () => {
     setMenu(!menu);
@@ -22,7 +29,7 @@ const Navbar = ({ handleRoute }) => {
     <div className={classes.navbar}>
       <img src='./assets/shared/logo.svg' alt='space tour logo' />
       <div className={classes['nav-items']}>
-        {!menu && (
+        {!hamburgerMenuHandler() && !menu && (
           <img
             src='./assets/shared/icon-hamburger.svg'
             role='button'
@@ -31,6 +38,7 @@ const Navbar = ({ handleRoute }) => {
             id={classes['hamburger-logo']}
           />
         )}
+        {hamburgerMenuHandler() && <nav className={classes['nav-items']}></nav>}
         {menu && <Sidebar handleMenu={menuHandler} handleRoute={handleRoute} />}
       </div>
     </div>

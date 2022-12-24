@@ -1,0 +1,5 @@
+export const DEVICE = {
+  DEVICE_MOBILE: 375,
+  DEVICE_TABLET: 768,
+  DEVICE_DESKTOP: 1440
+};
