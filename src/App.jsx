@@ -22,10 +22,10 @@ const App = () => {
   return (
     <main className='app'>
       <Navbar handleRoute={routeHandler} route={route} navItems={dataNames} />
-      {/* {route === 'home' && <Home />} */}
-      {/* {route === "destinations" && <Destination data={data.destinations} />} */}
-      {/* {route === "crew" && <Crew data={data.crew} />} */}
-      {/* {route === "technology" && <Technology data={data.technology} />} */}
+      {route === 'home' && <Home />}
+      {/* {route === 'destinations' && <Destination data={data.destinations} />} */}
+      {/* {route === 'crew' && <Crew data={data.crew} />} */}
+      {/* {route === 'technology' && <Technology data={data.technology} />} */}
     </main>
   );
 };

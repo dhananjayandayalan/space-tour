@@ -4,15 +4,44 @@ import { useWindowDimensions } from '../../hooks';
 
 import { DEVICE } from '../../constants';
 import classes from './Navbar.module.scss';
+import Overlay from '../Overlay';
 
 const overlayDOM = document.getElementById('overlay');
 
-const Sidebar = ({ handleMenu, handleRoute }) => {
-  const [close, setClose] = useState(false);
-
-  return <Fragment>
-    
-  </Fragment>;
+const Sidebar = ({ handleMenu, handleRoute, navItems, route, width }) => {
+  return (
+    <Overlay>
+      <div className={classes.wrapper}>
+        <div className={classes.inside}>
+          <img
+            src='./assets/shared/icon-close.svg'
+            alt='close-icon'
+            role='button'
+            onClick={handleMenu}
+          />
+          <nav className={classes['nav-overlay']}>
+            <ul>
+              {navItems.map((item, index) => {
+                return (
+                  <li key={item + index} tabIndex={'0'}>
+                    <button
+                      onClick={() => {
+                        handleRoute(item);
+                        handleMenu();
+                      }}
+                    >
+                      <span>{'0' + index}</span>
+                      <span>{item}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </Overlay>
+  );
 };
 
 const NavItems = (props) => {
@@ -65,8 +94,8 @@ const Navbar = (props) => {
         )}
         {notMobileHandler() && <NavItems {...props} width={width} />}
       </div>
-      {menu && (
-        <Sidebar handleMenu={menuHandler} handleRoute={props.handleRoute} />
+      {!notMobileHandler() && menu && (
+        <Sidebar {...props} handleMenu={menuHandler} />
       )}
     </Fragment>
   );
