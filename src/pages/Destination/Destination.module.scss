@@ -1,1 +1,149 @@
 @import '../../globals.scss';
+
+.destination {
+  background-image: url('../../assets/destination/background-destination-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  text-align: center;
+  h3 {
+    padding-top: 9rem;
+    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 1.17rem + 1.1267605633802815vw, 2.8rem);
+    letter-spacing: 2.7px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    span {
+      opacity: 0.4;
+      font-weight: 700;
+    }
+  }
+
+  figure {
+    margin-top: 3.2rem;
+    margin-inline: 2.4rem;
+    picture {
+      width: 52%;
+      max-width: 44.5rem;
+      margin-inline: auto;
+    }
+    figcaption {
+      padding-top: 2.6rem;
+
+      h1 {
+        font-size: 5.6rem;
+        font-size: clamp(5.6rem, 4.05rem + 4.2vw, 10rem);
+        font-family: 'Bellefair', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 0.3rem + 1.7vw, 1.8rem);
+        font-family: 'Barlow', sans-serif;
+        line-height: 2;
+        color: $color-accent;
+      }
+      hr {
+        margin: 3.2rem 0;
+      }
+
+      .facts {
+        gap: 3.2rem;
+        .fact {
+          text-transform: uppercase;
+          p {
+            font-size: 1.4rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 4.37px;
+            color: $color-accent;
+          }
+          h3 {
+            font-size: 2.4rem;
+            padding-top: 1.2rem;
+            font-family: 'Bellefair', sans-serif;
+            text-align: center;
+          }
+          &:last-child {
+            padding-top: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 768px (767.98px)
+@media (min-width: $bp-768) {
+  .destination {
+    background-image: url('../../assets/destination/background-destination-tablet.jpg');
+    padding-inline: 4rem;
+    h3 {
+      padding-top: 13rem;
+      text-align: left;
+      letter-spacing: 3.3px;
+    }
+
+    figure {
+      margin-top: 6rem;
+      margin-inline: 5.8rem;
+      figcaption {
+        padding-top: 5.2rem;
+
+        .facts {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 11rem;
+          .fact {
+            &:last-child {
+              padding: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 1440px (1439.98px)
+@media (min-width: $bp-1440) {
+  .destination {
+    background-image: url('../../assets/destination/background-destination-desktop.jpg');
+    padding-inline: 16rem;
+    text-align: left;
+    h3 {
+      padding-top: 21rem;
+      letter-spacing: 4.7px;
+    }
+
+    figure {
+      margin-top: 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13rem;
+      picture {
+        margin: unset;
+        margin-left: calc(23rem - 16rem);
+        width: 100%;
+      }
+      figcaption {
+        padding: unset;
+
+        hr {
+          margin-top: 5.4rem;
+        }
+
+        .facts {
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 8rem;
+          .fact h3 {
+            text-align: unset;
+          }
+        }
+      }
+    }
+  }
+}
