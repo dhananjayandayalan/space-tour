@@ -1,0 +1,22 @@
+@import '../../globals.scss';
+
+.home {
+  background-image: url('../../assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+// 768px (767.98px)
+@media (min-width: $bp-768) {
+  .home {
+    background-image: url('../../assets/home/background-home-tablet.jpg');
+  }
+}
+
+// 1440px (1439.98px)
+@media (min-width: $bp-1440) {
+  .home {
+    background-image: url('../../assets/home/background-home-desktop.jpg');
+  }
+}

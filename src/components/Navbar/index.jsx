@@ -15,7 +15,7 @@ const Sidebar = ({ handleMenu, handleRoute, navItems, route, width }) => {
         <div className={classes.inside}>
           <img
             src='./assets/shared/icon-close.svg'
-            alt='close-icon'
+            alt='close icon'
             role='button'
             onClick={handleMenu}
           />

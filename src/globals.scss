@@ -9,18 +9,10 @@ $color-accent: hsl(231, 77%, 90%);
 $color-white: hsl(0, 0%, 100%);
 $color-nav-bg: hsla(0, 0%, 100%, 0.04);
 $color-nav-hover-bg: hsla(0, 0%, 100%, 0.06);
-$fs-h1: 15rem;
-$fs-h2: 10rem;
-$fs-h3: 5.6rem;
-$fs-h4: 3.2rem;
-$fs-h5: 2.8rem;
-$fs-sub-h1: 2.8rem;
-$fs-sub-h2: 1.4rem;
-$fs-nav: 1.6rem;
-$fs-par: 1.8rem;
-$csp-h5: 4.75px;
-$csp-sub-h2: 2.35px;
-$csp-nav: 2.7px;
+$bp-768: 47.9988em;
+$bp-1440: 89.9988em;
+
+
 
 /**************************/
 /* Reset */
@@ -78,40 +70,34 @@ body {
   font-family: 'Barlow', serif;
   background: $color-base;
   color: $color-white;
-  background-image: url('./assets/home/background-home-mobile.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .app {
   max-width: 144rem;
   margin: 0 auto;
+  position: relative;
 }
-
-/**************************/
-/* Global Media Queries */
-/**************************/
 
 // 500px (499.98px)
-@media (min-width: 31.2488em) {
-  body {
-    background-image: url('./assets/home/background-home-tablet.jpg');
-  }
-}
+// @media (min-width: 31.2488em) {
+//   body {
+//     background-image: url('./assets/home/background-home-tablet.jpg');
+//   }
+// }
 
 // 992px (991.98px)
-@media (min-width: 61.9988em) {
-  body {
-    background-image: url('./assets/home/background-home-desktop.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-}
+// @media (min-width: 61.9988em) {
+//   body {
+//     background-image: url('./assets/home/background-home-desktop.jpg');
+//     background-size: contain;
+//     background-position: top center;
+//   }
+// }
 
 // 1440px (1439.98px)
-@media (min-width: 89.9988em) {
-  body {
-    padding-top: 4rem;
-    background-size: contain;
-  }
-}
+// @media (min-width: 89.9988em) {
+//   body {
+//     padding-top: 4rem;
+//     background-size: contain;
+//   }
+// }

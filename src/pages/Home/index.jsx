@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Home = () => {
-  return <div>Home</div>;
+import classes from './Home.module.scss';
+
+const Home = ({ handleRoute }) => {
+  return <div className={classes.home}>
+    
+  </div>;
 };
 
 export default Home;
