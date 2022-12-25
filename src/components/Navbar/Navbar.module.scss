@@ -130,9 +130,8 @@
 @media (min-width: $bp-1440) {
   .navbar {
     top: 40px;
-    padding-left: 5.5rem;
     ul {
-      padding-inline: 6rem;
+      padding-left: 16rem;
       gap: 4.8rem;
       justify-content: unset;
     }

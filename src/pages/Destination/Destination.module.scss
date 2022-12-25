@@ -111,7 +111,7 @@
 @media (min-width: $bp-1440) {
   .destination {
     background-image: url('../../assets/destination/background-destination-desktop.jpg');
-    padding-inline: 16rem;
+    padding-left: 16rem;
     text-align: left;
     h3 {
       padding-top: 21rem;
@@ -122,7 +122,7 @@
       margin-top: 10rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 13rem;
+      gap: 16rem;
       picture {
         margin: unset;
         margin-left: calc(23rem - 16rem);
@@ -130,14 +130,13 @@
       }
       figcaption {
         padding: unset;
-
+        padding-right: 11rem;
         hr {
           margin-top: 5.4rem;
         }
 
         .facts {
           justify-content: flex-start;
-          align-items: flex-start;
           gap: 8rem;
           .fact h3 {
             text-align: unset;
