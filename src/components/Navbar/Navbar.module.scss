@@ -112,7 +112,7 @@
   }
 }
 
-@media (min-width: 47.9988em) {
+@media (min-width: $bp-768) {
   .navbar {
     padding: unset;
     padding-left: 4rem;
@@ -130,8 +130,11 @@
 @media (min-width: $bp-1440) {
   .navbar {
     top: 40px;
+    padding-left: 5.5rem;
     ul {
       padding-inline: 6rem;
+      gap: 4.8rem;
+      justify-content: unset;
     }
   }
 }
