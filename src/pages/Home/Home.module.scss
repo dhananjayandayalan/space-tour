@@ -5,12 +5,89 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  .container {
+    padding-top: 11rem;
+    padding-inline: 2.4rem;
+    text-align: center;
+    .left {
+      h1,
+      h3 {
+        text-transform: uppercase;
+      }
+
+      h3,
+      p {
+        color: $color-accent;
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        font-size: clamp(1.6rem, 1.1vw + 1.2rem, 2.8rem);
+        font-weight: 400;
+        font-family: 'Barlow Condensed', sans-serif;
+        letter-spacing: 2.7px;
+      }
+
+      h1 {
+        font-size: 8rem;
+        font-size: clamp(8rem, 6.6vw + 5.6rem, 15rem);
+        font-family: 'Bellefair', sans-serif;
+      }
+
+      p {
+        padding-top: 1.6rem;
+        font-size: 1.6rem;
+        font-size: clamp(1.6rem, 0.5vw + 1.44rem, 1.8rem);
+        line-height: 1.8;
+        font-family: 'Barlow', sans-serif;
+      }
+    }
+
+    a {
+      color: $color-base;
+      background: $color-white;
+      margin-inline: auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      position: relative;
+      font-family: 'Bellefair', sans-serif;
+      font-weight: 400;
+      font-size: 2rem;
+      font-size: clamp(2rem, 3.1vw + 0.8rem, 3.2rem);
+      margin-top: 8rem;
+      width: 15rem;
+      height: 15rem;
+      cursor: pointer;
+      z-index: 9;
+    }
+  }
 }
 
 // 768px (767.98px)
 @media (min-width: $bp-768) {
   .home {
     background-image: url('../../assets/home/background-home-tablet.jpg');
+    .container {
+      padding-top: 20rem;
+      padding-inline: 16rem;
+
+      .left {
+        h3 {
+          letter-spacing: 3.4px;
+        }
+
+        p {
+          padding-top: 2.4rem;
+        }
+      }
+
+      a {
+        margin-top: 15rem;
+        width: 24rem;
+        height: 24rem;
+      }
+    }
   }
 }
 
@@ -18,5 +95,40 @@
 @media (min-width: $bp-1440) {
   .home {
     background-image: url('../../assets/home/background-home-desktop.jpg');
+    .container {
+      padding-top: 38rem;
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        text-align: left;
+        flex-basis: 50%;
+        h3 {
+          letter-spacing: 4.7px;
+        }
+      }
+
+      a {
+        margin: unset;
+        align-self: flex-end;
+
+        &::after {
+          position: absolute;
+          transition: all 1s;
+          content: '';
+          width: 45rem;
+          height: 45rem;
+          z-index: -1;
+          background: $color-white;
+          opacity: 0;
+          border-radius: 50%;
+          transition: all 300ms ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.4;
+        }
+      }
+    }
   }
 }
