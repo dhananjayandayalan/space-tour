@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { useWindowDimensions } from '../../hooks';
 
 import { DEVICE } from '../../constants';
@@ -11,9 +10,7 @@ const Navbar = (props) => {
   const [menu, setMenu] = useState(false);
   const { width } = useWindowDimensions();
 
-  const notMobileHandler = () => {
-    return width >= DEVICE.DEVICE_TABLET;
-  };
+  const notMobile = width >= DEVICE.DEVICE_TABLET;
 
   const menuHandler = () => {
     setMenu(!menu);
@@ -23,7 +20,7 @@ const Navbar = (props) => {
     <Fragment>
       <div className={classes.navbar}>
         <img src='./assets/shared/logo.svg' alt='space tour logo' />
-        {!notMobileHandler() && !menu && (
+        {!notMobile && !menu && (
           <img
             src='./assets/shared/icon-hamburger.svg'
             role='button'
@@ -32,10 +29,12 @@ const Navbar = (props) => {
             id={classes['hamburger-logo']}
           />
         )}
-        {notMobileHandler() && <NavItems {...props} width={width} />}
+        {notMobile && (
+          <NavItems {...props} width={width} className={classes['nav-items']} />
+        )}
       </div>
-      {!notMobileHandler() && menu && (
-        <Sidebar {...props} handleMenu={menuHandler} />
+      {!notMobile && menu && (
+        <Sidebar {...props} handleMenu={menuHandler} width={width} />
       )}
     </Fragment>
   );

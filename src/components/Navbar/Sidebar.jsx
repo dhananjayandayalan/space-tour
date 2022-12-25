@@ -4,7 +4,7 @@ import Overlay from '../Overlay';
 import NavItems from './NavItems';
 import classes from './Navbar.module.scss';
 
-const Sidebar = ({ handleMenu, handleRoute, navItems, route, width }) => {
+const Sidebar = (props) => {
   return (
     <Overlay>
       <div className={classes.wrapper}>
@@ -13,9 +13,10 @@ const Sidebar = ({ handleMenu, handleRoute, navItems, route, width }) => {
             src='./assets/shared/icon-close.svg'
             alt='close icon'
             role='button'
-            onClick={handleMenu}
+            onClick={props.handleMenu}
           />
-          <nav className={classes['nav-overlay']}>
+          <NavItems {...props} className={classes['nav-overlay']} />
+          {/* <nav className={classes['nav-overlay']}>
             <ul>
               {navItems.map((item, index) => {
                 return (
@@ -33,7 +34,7 @@ const Sidebar = ({ handleMenu, handleRoute, navItems, route, width }) => {
                 );
               })}
             </ul>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </Overlay>
