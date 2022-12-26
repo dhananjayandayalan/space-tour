@@ -1,0 +1,63 @@
+@import '../../globals.scss';
+
+.tabs {
+  padding-bottom: 1rem;
+  ul {
+    list-style: none;
+    display: flex;
+    margin-inline: auto;
+    justify-content: center;
+    gap: 10%;
+    max-width: 29rem;
+
+    li {
+      button {
+        position: relative;
+        padding-bottom: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        font-size: clamp(1.4rem, 1.2rem + 0.5089058524173028vw, 1.6rem);
+        color: $color-accent;
+        text-transform: uppercase;
+        cursor: pointer;
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          content: '';
+          background-color: $color-white;
+          height: 3px;
+          opacity: 0;
+          transition: all 200ms ease-in-out;
+        }
+        &:hover::after {
+          opacity: 0.5;
+        }
+        &.active {
+          color: $color-white;
+        }
+        &.active::after {
+          opacity: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-768) {
+  .tabs {
+    padding-bottom: 2.2rem;
+  }
+}
+
+@media (min-width: $bp-1440) {
+  .tabs {
+    padding-bottom: 2.7rem;
+
+    ul {
+      margin: unset;
+    }
+  }
+}
