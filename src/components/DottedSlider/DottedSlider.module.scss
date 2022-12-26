@@ -1,0 +1,40 @@
+@import '../../globals.scss';
+
+.dotted-slider {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    button {
+      width: 1rem;
+      height: 1rem;
+      border: none;
+      border-radius: 50%;
+      opacity: 0.4;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-1440) {
+  .dotted-slider {
+    ul {
+      justify-content: flex-start;
+      gap: 2.4rem;
+      padding-top: 4rem;
+      button {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

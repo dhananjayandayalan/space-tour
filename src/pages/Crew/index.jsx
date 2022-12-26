@@ -26,7 +26,7 @@ const Crew = ({ data }) => {
         <DottedSlider
           index={index}
           handleIndex={indexHandler}
-          size={data.length}
+          data={names}
         />
         <div className={classes.description}>
           <h2>{value.role}</h2>

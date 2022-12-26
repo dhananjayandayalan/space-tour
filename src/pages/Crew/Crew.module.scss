@@ -78,7 +78,7 @@
     }
 
     picture {
-        border: none;
+      border: none;
     }
 
     .details {
@@ -102,10 +102,10 @@
 @media (min-width: $bp-1440) {
   .crew {
     background-image: url('../../assets/crew/background-crew-desktop.jpg');
-    padding-inline: 16rem;
+    padding-left: 16rem;
     padding-top: 21rem;
     grid-template-rows: 18rem 1fr;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
 
     h3 {
       letter-spacing: 4.7px;
@@ -127,8 +127,11 @@
       text-align: left;
       align-self: start;
 
-      p {
-        padding-right: 16rem;
+      gap: 3rem;
+      .description {
+        p {
+          padding: unset;
+        }
       }
     }
   }
