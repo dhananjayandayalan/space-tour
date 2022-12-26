@@ -12,8 +12,6 @@ $color-nav-hover-bg: hsla(0, 0%, 100%, 0.06);
 $bp-768: 47.9988em;
 $bp-1440: 89.9988em;
 
-
-
 /**************************/
 /* Reset */
 /**************************/
@@ -75,4 +73,8 @@ body {
 .app {
   margin: 0 auto;
   position: relative;
+
+  & > *:not(:first-child) {
+    min-height: 100vh;
+  }
 }
