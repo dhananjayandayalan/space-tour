@@ -22,12 +22,16 @@ const Technology = ({ data }) => {
         <picture>
           <source
             srcSet={value.images.portrait}
-            media={`(min-width: 76.8rem)`}
+            media={`(min-width: 1440px)`}
           />
           <img src={value.images.landscape} alt={`Image of ${value.name}`} />
         </picture>
         <section>
-          {/* <NumberedSlider index={index} handleIndex={indexHandler} data={names} /> */}
+          <NumberedSlider
+            index={index}
+            handleIndex={indexHandler}
+            data={names}
+          />
           <div className={classes.details}>
             <h4>The Terminology ...</h4>
             <h1>{value.name}</h1>

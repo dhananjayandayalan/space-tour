@@ -10,8 +10,8 @@ const Slider = ({ index, handleIndex, data, className, type, activeClass }) => {
               className={i === index ? activeClass : ''}
               onClick={() => handleIndex(i)}
             >
-              {type === 'tab' && item}
-              {type === 'number' && i + 1}
+              {type === 'tab' && <span>{item}</span>}
+              {type === 'number' && <span>{i + 1}</span>}
             </button>
           </li>
         ))}

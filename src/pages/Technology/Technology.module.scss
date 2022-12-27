@@ -67,7 +67,6 @@
       padding-top: 6rem;
       picture {
         img {
-          max-width: 71rem;
           margin-inline: auto;
         }
       }
@@ -105,9 +104,18 @@
       display: flex;
       flex-direction: row-reverse;
       padding-top: 2.8rem;
+      gap: 13rem;
+      picture {
+        img {
+          max-width: 52rem;
+          margin: unset;
+        }
+      }
 
       section {
+        display: flex;
         padding-inline: unset;
+        gap: 8rem;
       }
     }
   }
