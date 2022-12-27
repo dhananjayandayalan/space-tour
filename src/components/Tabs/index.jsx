@@ -1,23 +1,16 @@
 import React from 'react';
 
+import Slider from '../Slider';
 import classes from './Tabs.module.scss';
 
-const Tabs = ({ index, handleTabs, data }) => {
+const Tabs = (props) => {
   return (
-    <div className={classes.tabs}>
-      <ul>
-        {data.map((item, i) => (
-          <li key={item + i} tabIndex={'0'}>
-            <button
-              className={i === index ? classes.active : ''}
-              onClick={() => handleTabs(i)}
-            >
-              {item}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Slider
+      {...props}
+      className={classes.tabs}
+      activeClass={classes.active}
+      type={'tab'}
+    />
   );
 };
 

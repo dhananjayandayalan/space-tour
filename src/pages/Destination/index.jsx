@@ -24,7 +24,7 @@ const Destination = ({ data }) => {
           <img src={value.images.png} alt={`Image of ${names[index]}`} />
         </picture>
         <figcaption>
-          <Tabs index={index} handleTabs={indexHandler} data={names} />
+          <Tabs index={index} handleIndex={indexHandler} data={names} />
           <h1>{value.name}</h1>
           <p>{value.description}</p>
           <hr />
