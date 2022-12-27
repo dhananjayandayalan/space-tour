@@ -12,7 +12,7 @@ import { Home, Destination, Crew, Technology } from './pages';
 import { Navbar } from './components';
 
 const App = () => {
-  const [route, setRoute] = useState('home');
+  const [route, setRoute] = useState('technology');
   const dataNames = ['home', ...Object.keys(data)];
 
   const routeHandler = (value) => {
